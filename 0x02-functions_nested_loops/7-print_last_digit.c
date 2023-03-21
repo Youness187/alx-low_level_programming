@@ -12,5 +12,5 @@ if (lastNum < 0)
 lastNum = -lastNum;
 }
 _putchar(lastNum + '0');
-return lastNum;
+return (lastNum);
 }
