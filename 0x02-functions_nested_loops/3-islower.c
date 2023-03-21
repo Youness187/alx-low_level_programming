@@ -2,6 +2,7 @@
 /**
  * _islower - function to print in lower case
  * Return: 1 if it is a lower case
+ * @c: parameter to be printed
  * and 0 otherwise
  */
 
@@ -10,8 +11,7 @@ int _islower(int c)
 int i = 0;
 if (c >= 97 && c <= 122)
 {
-    i = 1;
+i = 1;
 }
-
-return i;
+return (i);
 }
