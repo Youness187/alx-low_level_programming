@@ -2,7 +2,6 @@
 /**
  * print_diagonal - draw a diagonal line
  * @n: number of times the '\' char is printed
- * Description: Can only use _putchar to print
  */
 void print_diagonal(int n)
 {
@@ -26,7 +25,6 @@ void print_diagonal(int n)
 	}
 	else
 	{
-		_putchar('\\');
 		_putchar('\n');
 	}
 }
