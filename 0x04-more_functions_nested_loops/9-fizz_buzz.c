@@ -22,7 +22,10 @@ int main(void)
 			{
 				printf("Buzz ");
 			}
-			printf("FizzBuzz ");
+			else
+			{
+				printf("FizzBuzz ");
+			}
 		}
 		else
 		{
