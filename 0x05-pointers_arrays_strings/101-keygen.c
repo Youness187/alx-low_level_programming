@@ -4,8 +4,8 @@
 
 int main(void)
 {
-	srand(time(NULL));
 	int r, i, j = 2772;
+	srand(time(NULL));
 
 	for (i = 0; j >= 121; i++)
 	{
