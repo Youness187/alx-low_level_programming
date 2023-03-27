@@ -26,9 +26,9 @@ void puts2(char *str)
 {
 	int i = 0;
 
-	do {
+	while (str[i] != '\0' && i < _strlen(str)) {
 		_putchar(str[i]);
 		i += 2;
-	} while (str[i] != '\0' && i < _strlen(str));
+	}
 	_putchar('\n');
 }
