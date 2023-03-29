@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * check - chakes if a is an A or E or O or T or L
+ * check - chakes if a is an "\n\t ,;.!?(){}\""
  * @a: char
  * @b: char
  * Return: a
