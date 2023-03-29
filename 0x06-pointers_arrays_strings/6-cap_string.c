@@ -1,27 +1,5 @@
 #include "main.h"
 /**
- * check - chakes if a is an "\n\t ,;.!?(){}\""
- * @a: char
- * @b: char
- * Return: a
-*/
-
-char check(char a, char b)
-{
-	int i;
-	char Char[] = "\n\t ,;.!?(){}\"";
-
-	for (i = 0; i < 13; i++)
-	{
-		if (b == Char[i])
-		{
-			a -= 32;
-			break;
-		}
-	}
-	return (a);
-}
-/**
  * cap_string - function that capitalizes all words of a string.
  * @s: String
  * Return: capitalized words of a string.
@@ -30,12 +8,21 @@ char check(char a, char b)
 char *cap_string(char *s)
 {
 	int i = 0;
+	int j;
+	char Char[] = "\n\t ,;.!?(){}\"";
 
 	while (s[i] != '\0')
 	{
 		if (s[i] >= 97 && s[i] <= 122)
 		{
-			s[i] = check(s[i], s[i - 1]);
+			for (j = 0; j < 13; j++)
+			{
+				if (s[i - 1] == Char[j])
+				{
+					s[i] -= 32;
+					break;
+				}
+			}
 		}
 		i++;
 	}
