@@ -4,7 +4,7 @@
  * @s: buffer array
  * @b: char
  * @n: bytes of memory
- * Return: ointer to the memory area s.
+ * Return: ointer to the memory area (s).
  */
 char *_memset(char *s, char b, unsigned int n)
 {
