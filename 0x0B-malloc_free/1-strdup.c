@@ -25,10 +25,11 @@ int length(char *d)
 
 char *_strdup(char *str)
 {
-	if (str == NULL)
-		return (NULL);
 	char *cp;
 	int i, l = length(str);
+
+	if (str == NULL)
+		return (NULL);
 
 	cp = malloc(l + 1);
 	if (cp == NULL)
