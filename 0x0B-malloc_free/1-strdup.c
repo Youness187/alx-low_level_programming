@@ -30,8 +30,8 @@ char *_strdup(char *str)
 	char *cp;
 	int i, l = length(str);
 
-	a = malloc(l + 1);
-	if (a == NULL)
+	cp = malloc(l + 1);
+	if (cp == NULL)
 		return (NULL);
 
 	for (i = 0; i < l; i++)
