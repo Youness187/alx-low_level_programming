@@ -26,7 +26,7 @@ int cw(char *str)
 
 char **strtow(char *str)
 {
-	int i, j, n_of_words, wc = 0;
+	int i, j, n_of_words, wc = 0, l;
 	char **w;
 
 	if (str == NULL || *str == '\0')
@@ -54,7 +54,6 @@ char **strtow(char *str)
 				free(w);
 				return (NULL);
 			}
-			int l;
 
 			for (l = 0; l < j; l++)
 				w[wc][l] = str[i + l];
