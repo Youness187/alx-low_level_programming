@@ -24,18 +24,16 @@ int leng(char *s)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	s1 = (s1 == NULL) ? "" : s1;
-	s2 = (s2 == NULL) ? "" : s2;
-	int s1l = leng(s1);
-	int s2l = leng(s2);
-	int ln = (n >= s2l) ? s2l : n;
+	int s1l = leng(s1 = (s1 == NULL) ? "" : s1);
+	int s2l = leng(s2 = (s2 == NULL) ? "" : s2);
+	unsigned int ln = ((n >= (unsigned int)s2l) ? (unsigned int)s2l : n);
 	int i, j = 0;
 	char *string = malloc((s1l + ln + 1) * sizeof(char));
 
 	if (string == NULL)
 		return (NULL);
 
-	for (i = 0; i < (s1l + ln); i++)
+	for (i = 0; (unsigned int)i < (s1l + ln); i++)
 		string[i] = (i < s1l) ? s1[i] : s2[j++];
 
 	string[i] = '\0';
