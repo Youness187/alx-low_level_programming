@@ -19,15 +19,15 @@ int length(char *s)
  * @s: string
  * @c: the string to copy from
  * @l: length of c
- * Return: void
  */
-void *cp_string(char *s, char *c, int l)
+void cp_string(char *s, char *c, int l)
 {
 	int i;
 
 	for (i = 0; i <= l; i++)
 		s[i] = c[i];
 }
+
 /**
  * new_dog - function that creates a new dog
  * @name: name of the dog
