@@ -20,11 +20,12 @@ int length(char *s)
  * @c: the string to copy from
  * @l: length of c
  */
+
 void cp_string(char *s, char *c, int l)
 {
 	int i;
 
-	for (i = 0; i <= l; i++)
+	for (i = 0; i < l; i++)
 		s[i] = c[i];
 }
 
