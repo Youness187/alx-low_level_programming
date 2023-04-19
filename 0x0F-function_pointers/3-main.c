@@ -2,15 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * err - error function
- * @n: Number to quit
-*/
-void err(int n)
-{
-	printf("Error\n");
-	exit(n);
-}
-/**
  * main - print results of the operation
  * @argc: the number of arguments
  * @argv: array of pointers to args
