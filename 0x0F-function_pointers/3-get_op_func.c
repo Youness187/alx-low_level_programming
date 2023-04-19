@@ -23,12 +23,3 @@ int (*get_op_func(char *s))(int, int)
 
 	return (ops[i].f);
 }
-/**
- * err - error function
- * @n: Number to quit
-*/
-void err(int n)
-{
-	printf("Error\n");
-	exit(n);
-}
