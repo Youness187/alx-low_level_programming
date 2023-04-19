@@ -18,13 +18,17 @@ void err(int n)
  */
 int main(int argc, char *argv[])
 {
-	int n1 = atoi(argv[1]);
-	int n2 = atoi(argv[3]);
-	char *op = argv[2];
+	int n1 , n2;
+	char *op;
 
 	if (argc != 4)
 		err(98);
-	else if (get_op_func(op) == NULL || op[1] != '\0')
+
+	n1 = atoi(argv[1]);
+	n2 = atoi(argv[3]);
+	op = argv[2];
+
+    if (get_op_func(op) == NULL || op[1] != '\0')
 		err(99);
 	else if ((*op == '%' && n2 == 0) || (*op == '/' && n2 == 0))
 		err(100);
