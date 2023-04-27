@@ -1,5 +1,18 @@
 #include "lists.h"
 /**
+ * length_str - conts length of a string
+ * @str: string
+ * Return: length
+*/
+unsigned int length_str(const char *str)
+{
+	int l;
+
+	for (l = 0; *str != '\0'; l++, str++)
+		;
+	return (l);
+}
+/**
  * add_node_end - function that adds a new node at the end of a list_t list.
  * @head: head
  * @str: String
