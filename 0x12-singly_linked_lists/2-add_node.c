@@ -14,7 +14,7 @@ unsigned int length_str(const char *str)
 	return (l);
 }
 /**
- * length_str - function that adds a new node at the beginning of a list_t list.
+ * add_node - that adds a new node at the beginning of a list_t list.
  * @head: head
  * @str: string
  * Return: the address of the new element, or NULL if it failed
