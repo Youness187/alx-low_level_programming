@@ -7,23 +7,23 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *curr, *hold;
 	size_t c = 0;
+	long int d;
 
-	curr = head;
-	if (curr == NULL)
+	if (head == NULL)
 		exit(98);
 
-	while (curr != NULL)
+	while (head)
 	{
-		hold = curr;
-		curr = curr->next;
+		d = (head) - (head->next);
 		c++;
-		printf("[%p] %d\n", (void *)hold, hold->n);
+		printf("[%p] %d\n", (void *)head, head->n);
 
-		if (hold < curr)
+		if (d > 0)
+			head = head->next;
+		else
 		{
-			printf("-> [%p] %d\n", (void *)curr, curr->n);
+			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
 			break;
 		}
 	}
