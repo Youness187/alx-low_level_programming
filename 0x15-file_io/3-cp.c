@@ -7,7 +7,7 @@
  */
 int main(int ac, char *av[])
 {
-	int in_fd, out_fd, is_ = 1, ois_, a, b;
+	int in_fd, out_fd, is_, ois_, a, b;
 	char buf[MAXSIZE];
 	mode_t m = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
@@ -22,8 +22,7 @@ int main(int ac, char *av[])
 	if (out_fd == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[1]), exit(99);
 
-	while (is_ > 0)
-	{
+	do {
 		is_ = read(in_fd, buf, MAXSIZE);
 		if (is_ == -1)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
@@ -33,7 +32,7 @@ int main(int ac, char *av[])
 			if (ois_ == -1)
 				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 		}
-	}
+	} while (is_ > 0);
 	a = close(in_fd), b = close(out_fd);
 	if (a == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", in_fd), exit(100);
