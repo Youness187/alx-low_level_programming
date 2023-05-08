@@ -1,5 +1,4 @@
 #include "main.h"
-#include <unistd.h>
 /**
  * main - create the copy bash script
  * @ac: argument count
@@ -10,6 +9,7 @@ int main(int ac, char *av[])
 {
 	int in_fd, out_fd, is_ = 1, ois_, a, b;
 	char buf[MAXSIZE];
+	mode_t m = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (ac != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
@@ -18,7 +18,7 @@ int main(int ac, char *av[])
 	if (in_fd == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 
-	out_fd = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	out_fd = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, m);
 	if (out_fd == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[1]), exit(99);
 
