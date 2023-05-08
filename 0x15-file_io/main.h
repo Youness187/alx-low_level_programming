@@ -1,7 +1,7 @@
 #ifndef MY_MAIN_H
 #define MY_MAIN_H
 
-#define MAXSIZE 1024
+#define MAXSIZE 1254
 
 #include <stdio.h>
 #include <stdlib.h>
