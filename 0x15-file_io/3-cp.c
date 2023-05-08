@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * main - create the copy bash script
  * @ac: argument count
@@ -7,7 +8,7 @@
  */
 int main(int ac, char *av[])
 {
-	int in_fd, out_fd, is_ = 1, ois_;
+	int in_fd, out_fd, is_ = 1, ois_, a, b;
 	char buf[MAXSIZE];
 
 	if (ac != 3)
@@ -33,9 +34,10 @@ int main(int ac, char *av[])
 				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 		}
 	}
-	if (close(in_fd) == -1)
+	a = close(in_fd), b = close(out_fd);
+	if (a == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", in_fd), exit(100);
-	if (close(out_fd) == -1)
+	if (b == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", out_fd), exit(100);
 	return (0);
 }
