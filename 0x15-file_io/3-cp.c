@@ -20,7 +20,7 @@ int main(int ac, char *av[])
 
 	out_fd = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, m);
 	if (out_fd == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[1]), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 
 	do {
 		is_ = read(in_fd, buf, MAXSIZE);
