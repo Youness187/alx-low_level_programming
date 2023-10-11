@@ -29,7 +29,7 @@ void print_arr(int *arr, int left, int right)
  */
 int binary(int *array, int left, int right, int value)
 {
-	int mid = (right - left) / 2;
+	int mid = left + (right - left) / 2;
 
 	if (left > right)
 		return (-1);
