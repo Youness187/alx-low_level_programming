@@ -56,7 +56,7 @@ int binary(int *array, int left, int right, int value)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	if (array == NULL)
+	if (array == NULL || size <= 1)
 		return (-1);
 
 	return (binary(array, 0, size - 1, value));
