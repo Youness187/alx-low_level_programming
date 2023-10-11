@@ -29,9 +29,9 @@ void print_arr(int *arr, int left, int right)
  */
 int binary(int *array, int left, int right, int value)
 {
-	int mid = left + (right - left) / 2;
+	int mid = (right - left) / 2;
 
-	if (left > right || right == 0)
+	if (left > right)
 		return (-1);
 
 	print_arr(array, left, right);
@@ -56,15 +56,8 @@ int binary(int *array, int left, int right, int value)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	int i;
-
-	if (array == NULL)
+	if (array == NULL || size == 0)
 		return (-1);
 
-	i = binary(array, 0, size - 1, value);
-
-	if (i >= 0 && array[i] != value)
-		return (-1);
-
-	return (i);
+	return (binary(array, 0, size - 1, value));
 }
