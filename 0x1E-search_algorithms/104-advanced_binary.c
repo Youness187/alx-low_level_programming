@@ -31,7 +31,7 @@ int binary(int *array, int left, int right, int value)
 {
 	int mid = left + (right - left) / 2;
 
-	if (left > right)
+	if (left > right || right == 0)
 		return (-1);
 
 	print_arr(array, left, right);
